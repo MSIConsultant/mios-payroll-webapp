@@ -128,7 +128,7 @@ function RunCard({ run, companyName }: { run: PayrollRunOut; companyName?: strin
 
   const handleProcess = async () => {
     if (!confirm("Process payroll for all employees in this run?")) return
-    const companyEmployees = employees.filter((e) => e.company_id === run.company_id)
+    const companyEmployees = employees.filter((e) => String(e.company_id) === String(run.company_id))
     if (companyEmployees.length === 0) {
       toast.error("No employees", "No employees found for this company.")
       return
