@@ -1,10 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  // Turbopack dramatically speeds up dev compilation (replaces webpack in dev)
-  experimental: {
-    turbo: {},
-  },
+
   async headers() {
     return [
       {
@@ -16,6 +13,6 @@ const nextConfig = {
         ],
       },
     ];
-  },
+  }
 };
 module.exports = nextConfig;
